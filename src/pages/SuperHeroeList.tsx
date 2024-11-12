@@ -33,11 +33,8 @@ export default function SuperheroList() {
     return (
       (!filters.publisher || hero.biography?.publisher === filters.publisher) &&
       (!filters.alignment || hero.biography?.alignment === filters.alignment) &&
-      (!filters.gender || hero.appearance?.gender === filters.gender) &&
-      (!filters.affiliation ||
-        (hero.connections?.["group-affiliation"]?.toLowerCase() || "").includes(
-          filters.affiliation.toLowerCase()
-        ))
+      (!filters.race || hero.appearance?.race === filters.race) &&
+      (!filters.gender || hero.appearance?.gender === filters.gender)
     );
   });
 
@@ -109,6 +106,21 @@ export default function SuperheroList() {
           </select>
 
           <select
+            value={filters.race}
+            onChange={(e) => dispatch(setFilters({ race: e.target.value }))}
+            className="bg-gray-800 text-white px-4 py-2 rounded-lg"
+          >
+            <option value="">All Races</option>
+            <option value="Human">Human</option>
+            <option value="Mutant">Mutant</option>
+            <option value="Alien">Alien</option>
+            <option value="God / Eternal">God / Eternal</option>
+            <option value="Cyborg">Cyborg</option>
+            <option value="Asgardian">Asgardian</option>
+            <option value="Kryptonian">Kryptonian</option>
+          </select>
+
+          <select
             value={filters.gender}
             onChange={(e) => dispatch(setFilters({ gender: e.target.value }))}
             className="bg-gray-800 text-white px-4 py-2 rounded-lg"
@@ -116,14 +128,8 @@ export default function SuperheroList() {
             <option value="">All Genders</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
+            <option value="Other">Other</option>
           </select>
-
-          <button
-            onClick={() => dispatch(resetFilters())}
-            className="text-blue-400 hover:text-blue-300 text-sm"
-          >
-            Reset Filters
-          </button>
         </div>
       </div>
 

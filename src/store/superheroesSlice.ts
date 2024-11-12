@@ -45,6 +45,7 @@ interface SuperheroesState {
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
   filters: {
+    race: string;
     publisher: string;
     alignment: string;
     gender: string;
@@ -62,7 +63,8 @@ const initialState: SuperheroesState = {
     publisher: '',
     alignment: '',
     gender: '',
-    affiliation: ''
+    affiliation: '',
+    race: ''
   },
   searchTerm: '',
   hasSearched: false
@@ -101,7 +103,8 @@ const superheroesSlice = createSlice({
         publisher: '',
         alignment: '',
         gender: '',
-        affiliation: ''
+        affiliation: '',
+        race: ''
       };
     },
     resetSearch: (state) => {

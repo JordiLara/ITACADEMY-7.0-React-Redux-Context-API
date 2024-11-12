@@ -18,7 +18,6 @@ export const fetchSuperheroById = async (id: string): Promise<Superhero> => {
 };
 
 export const initialHeroes: Superhero[] = [
-  // Marvel Heroes
   {
     id: "346",
     name: "Iron Man",
@@ -248,7 +247,6 @@ export const initialHeroes: Superhero[] = [
     error: ''
   },
   
-  // DC Heroes
   {
     id: "69",
     name: "Batman",
