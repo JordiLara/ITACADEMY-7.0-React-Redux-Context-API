@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { FiSearch, FiAlertCircle, FiRotateCcw, FiLoader } from "react-icons/fi";
@@ -10,21 +11,36 @@ import {
 } from "../store/superheroesSlice";
 import type { AppDispatch, RootState } from "../store/store";
 
+const ITEMS_PER_PAGE = 12;
+
 export default function SuperheroList() {
   const dispatch = useDispatch<AppDispatch>();
   const { items, status, filters, searchTerm, error, hasSearched } =
     useSelector((state: RootState) => state.superheroes);
 
+  const [displayedItems, setDisplayedItems] = useState(ITEMS_PER_PAGE);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
+
   const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (searchTerm.trim()) {
       dispatch(searchSuperheroes(searchTerm));
+      setDisplayedItems(ITEMS_PER_PAGE);
     }
   };
 
   const handleReset = () => {
     dispatch(resetSearch());
     dispatch(resetFilters());
+    setDisplayedItems(ITEMS_PER_PAGE);
+  };
+
+  const handleLoadMore = () => {
+    setIsLoadingMore(true);
+    setTimeout(() => {
+      setDisplayedItems((prev: any) => prev + ITEMS_PER_PAGE);
+      setIsLoadingMore(false);
+    }, 800);
   };
 
   const filteredHeroes = items.filter((hero) => {
@@ -37,6 +53,9 @@ export default function SuperheroList() {
       (!filters.gender || hero.appearance?.gender === filters.gender)
     );
   });
+
+  const visibleHeroes = filteredHeroes.slice(0, displayedItems);
+  const hasMoreToShow = visibleHeroes.length < filteredHeroes.length;
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -135,7 +154,7 @@ export default function SuperheroList() {
 
       {/* Hero Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredHeroes.map((hero) => (
+        {visibleHeroes.map((hero) => (
           <Link
             key={hero.id}
             to={`/superheroes/${hero.id}`}
@@ -163,13 +182,31 @@ export default function SuperheroList() {
         ))}
       </div>
 
-      {status === "loading" && (
+      {hasMoreToShow && (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={handleLoadMore}
+            disabled={isLoadingMore}
+            className="bg-gradient-to-r from-red-500 to-blue-500 text-white px-10 py-6 rounded-lg hover:from-red-600 hover:to-blue-600 transition-colors"
+          >
+            {isLoadingMore ? (
+              <div className="flex justify-center">
+                <FiLoader className="h-5 w-5 text-white animate-spin" />Loading...
+              </div>
+            ) : (
+              "Load More Heroes"
+            )}
+          </button>
+        </div>
+      )}
+
+      {status === "loading" && !isLoadingMore && (
         <div className="flex justify-center mt-8">
           <FiLoader className="h-8 w-8 text-white animate-spin" />
         </div>
       )}
 
-      {status === "succeeded" && filteredHeroes.length === 0 && (
+      {status === "succeeded" && visibleHeroes.length === 0 && (
         <div className="text-center text-gray-400 mt-8">
           No heroes found matching your criteria
         </div>
