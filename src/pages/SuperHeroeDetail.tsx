@@ -87,9 +87,9 @@ export default function SuperheroDetail() {
           <img
             src={hero.image?.url}
             alt={hero.name}
-            className="w-full h-[500px] object-cover rounded-lg shadow-lg"
+            className="w-full h-[700px] object-cover rounded-lg shadow-lg"
           />
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+          <div className="absolute bottom-0 left-0 right-0 rounded-lg bg-gradient-to-t from-black to-transparent p-6">
             <h1 className="text-3xl font-bold text-white">{hero.name}</h1>
             <p className="text-gray-300">
               {hero.biography?.publisher || "Unknown Publisher"}
@@ -115,27 +115,6 @@ export default function SuperheroDetail() {
                   {renderStatBar(value || "0")}
                 </div>
               ))}
-            </div>
-          </div>
-
-          <div className="bg-gray-800 p-6 rounded-lg">
-            <h2 className="text-xl font-bold text-white mb-4 flex items-center">
-              <FiUsers className="h-5 w-5 mr-2" />
-              Connections
-            </h2>
-            <div className="space-y-4">
-              <div>
-                <p className="text-gray-400 mb-1">Group Affiliations</p>
-                <p className="text-white">
-                  {hero.connections?.["group-affiliation"] || "None"}
-                </p>
-              </div>
-              <div>
-                <p className="text-gray-400 mb-1">Relatives</p>
-                <p className="text-white">
-                  {hero.connections?.relatives || "None known"}
-                </p>
-              </div>
             </div>
           </div>
 
@@ -176,6 +155,27 @@ export default function SuperheroDetail() {
                 <p className="text-gray-400">First Appearance</p>
                 <p className="text-white">
                   {hero.biography?.["first-appearance"] || "Unknown"}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gray-800 p-6 rounded-lg">
+            <h2 className="text-xl font-bold text-white mb-4 flex items-center">
+              <FiUsers className="h-5 w-5 mr-2" />
+              Connections
+            </h2>
+            <div className="space-y-4">
+              <div>
+                <p className="text-gray-400 mb-1">Group Affiliations</p>
+                <p className="text-white">
+                  {hero.connections?.["group-affiliation"] || "None"}
+                </p>
+              </div>
+              <div>
+                <p className="text-gray-400 mb-1">Relatives</p>
+                <p className="text-white">
+                  {hero.connections?.relatives || "None known"}
                 </p>
               </div>
             </div>

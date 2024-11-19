@@ -1,8 +1,29 @@
-import { Link, useLocation } from "react-router-dom";
-import { FiFacebook, FiInstagram, FiTwitter, FiYoutube } from "react-icons/fi";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import {
+  FiFacebook,
+  FiInstagram,
+  FiTwitter,
+  FiYoutube,
+  FiLogIn,
+  FiUserPlus,
+  FiLogOut,
+} from "react-icons/fi";
+import { logout } from "../store/authSlice";
+import type { RootState } from "../store/store";
 
 export default function Navbar() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const location = useLocation();
+  const isAuthenticated = useSelector(
+    (state: RootState) => state.auth.isAuthenticated
+  );
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/login");
+  };
 
   const isActive = (path: string) => {
     return location.pathname === path;
@@ -132,6 +153,38 @@ export default function Navbar() {
                 <FiYoutube className="h-5 w-5" />
               </a>
             </div>
+          </div>
+        </div>
+
+        {/* Auth Buttons */}
+        <div className="border-t border-white/20 py-2">
+          <div className="flex justify-end space-x-4">
+            {isAuthenticated ? (
+              <button
+                onClick={handleLogout}
+                className="text-white hover:text-gray-200 text-sm uppercase tracking-wider px-4 py-1 rounded border border-white/30 hover:bg-white/10 transition-colors flex items-center gap-2"
+              >
+                <FiLogOut className="h-4 w-4" />
+                Log Out
+              </button>
+            ) : (
+              <>
+                <Link
+                  to="/login"
+                  className="text-white hover:text-gray-200 text-sm uppercase tracking-wider px-4 py-1 rounded border border-white/30 hover:bg-white/10 transition-colors flex items-center gap-2"
+                >
+                  <FiLogIn className="h-4 w-4" />
+                  Log In
+                </Link>
+                <Link
+                  to="/register"
+                  className="text-white hover:text-gray-200 text-sm uppercase tracking-wider px-4 py-1 rounded border border-white/30 hover:bg-white/10 transition-colors flex items-center gap-2"
+                >
+                  <FiUserPlus className="h-4 w-4" />
+                  Sign Up
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>

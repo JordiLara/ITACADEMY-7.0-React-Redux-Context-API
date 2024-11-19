@@ -6,10 +6,12 @@ import {
 } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
-import  Welcome  from "./pages/Welcome";
 import Navbar from "./components/Navbar";
 import SuperheroList from "./pages/SuperHeroeList";
 import SuperheroDetail from "./pages/SuperHeroeDetail";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Welcome from "./pages/Welcome";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Welcome />} />
             <Route path="/" element={<Navigate to="/superheroes" replace />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route path="/superheroes" element={<SuperheroList />} />
             <Route path="/superheroes/:id" element={<SuperheroDetail />} />
             <Route path="*"></Route>

@@ -2,8 +2,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { initialHeroes } from '../utils/superheroData';
 
 export interface Superhero {
-  response: string;
   error: string;
+  response: string;
   id: string;
   name: string;
   powerstats: {
@@ -45,11 +45,10 @@ interface SuperheroesState {
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
   filters: {
-    race: string;
     publisher: string;
     alignment: string;
+    race: string;
     gender: string;
-    affiliation: string;
   };
   searchTerm: string;
   hasSearched: boolean;
@@ -62,9 +61,8 @@ const initialState: SuperheroesState = {
   filters: {
     publisher: '',
     alignment: '',
-    gender: '',
-    affiliation: '',
-    race: ''
+    race: '',
+    gender: ''
   },
   searchTerm: '',
   hasSearched: false
@@ -74,7 +72,7 @@ export const searchSuperheroes = createAsyncThunk(
   'superheroes/search',
   async (searchTerm: string) => {
     try {
-      const response = await fetch(`https://superheroapi.com/api.php/6cab7a82afd2286e3a5f0bf494cce6b0/search/${searchTerm}`);
+      const response = await fetch(`https://superheroapi.com/api.php/${import.meta.env.VITE_SUPERHERO_API_KEY}/search/${searchTerm}`);
       const data = await response.json();
       
       if (data.response === 'error') {
@@ -102,9 +100,8 @@ const superheroesSlice = createSlice({
       state.filters = {
         publisher: '',
         alignment: '',
-        gender: '',
-        affiliation: '',
-        race: ''
+        race: '',
+        gender: ''
       };
     },
     resetSearch: (state) => {
