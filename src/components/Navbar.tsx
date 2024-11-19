@@ -70,6 +70,16 @@ export default function Navbar() {
                   isActive("/") ? "border-yellow-400" : "border-transparent"
                 }`}
               >
+                Home
+              </Link>
+              <Link
+                to="/superheroes"
+                className={`text-white hover:text-gray-200 text-sm uppercase tracking-wider py-2 px-1 border-b-2 ${
+                  isActive("/superheroes")
+                    ? "border-yellow-400"
+                    : "border-transparent"
+                }`}
+              >
                 Superheroes
               </Link>
             </div>
