@@ -129,7 +129,9 @@ export const initialHeroes: Superhero[] = [
     },
     image: {
       url: "https://www.superherodb.com/pictures2/portraits/10/100/133.jpg"
-    }
+    },
+    error: '',
+    response: ''
   },
   {
     id: "149",
@@ -165,7 +167,9 @@ export const initialHeroes: Superhero[] = [
     },
     image: {
       url: "https://www.superherodb.com/pictures2/portraits/10/100/274.jpg"
-    }
+    },
+    error: '',
+    response: ''
   },
   {
     id: "332",
@@ -201,7 +205,9 @@ export const initialHeroes: Superhero[] = [
     },
     image: {
       url: "https://www.superherodb.com/pictures2/portraits/10/100/83.jpg"
-    }
+    },
+    error: '',
+    response: ''
   },
   {
     id: "107",
@@ -237,7 +243,9 @@ export const initialHeroes: Superhero[] = [
     },
     image: {
       url: "https://www.superherodb.com/pictures2/portraits/10/100/248.jpg"
-    }
+    },
+    error: '',
+    response: ''
   },
   
   // DC Heroes
@@ -275,7 +283,9 @@ export const initialHeroes: Superhero[] = [
     },
     image: {
       url: "https://www.superherodb.com/pictures2/portraits/10/100/639.jpg"
-    }
+    },
+    error: '',
+    response: ''
   },
   {
     id: "644",
@@ -311,7 +321,9 @@ export const initialHeroes: Superhero[] = [
     },
     image: {
       url: "https://www.superherodb.com/pictures2/portraits/10/100/791.jpg"
-    }
+    },
+    error: '',
+    response: ''
   },
   {
     id: "720",
@@ -347,7 +359,9 @@ export const initialHeroes: Superhero[] = [
     },
     image: {
       url: "https://www.superherodb.com/pictures2/portraits/10/100/807.jpg"
-    }
+    },
+    error: '',
+    response: ''
   },
   {
     id: "194",
@@ -383,7 +397,9 @@ export const initialHeroes: Superhero[] = [
     },
     image: {
       url: "https://www.superherodb.com/pictures2/portraits/10/100/892.jpg"
-    }
+    },
+    error: '',
+    response: ''
   },
   {
     id: "38",
@@ -419,7 +435,9 @@ export const initialHeroes: Superhero[] = [
     },
     image: {
       url: "https://www.superherodb.com/pictures2/portraits/10/100/634.jpg"
-    }
+    },
+    error: '',
+    response: ''
   },
   {
     id: "265",
@@ -455,6 +473,8 @@ export const initialHeroes: Superhero[] = [
     },
     image: {
       url: "https://www.superherodb.com/pictures2/portraits/10/100/697.jpg"
-    }
+    },
+    error: '',
+    response: ''
   }
 ];

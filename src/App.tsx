@@ -12,6 +12,7 @@ import SuperheroDetail from "./pages/SuperHeroeDetail";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Welcome from "./pages/Welcome";
+import ProtectedRoute from "./utils/ProtectedRoute";
 
 function App() {
   return (
@@ -24,8 +25,22 @@ function App() {
             <Route path="/" element={<Navigate to="/superheroes" replace />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/superheroes" element={<SuperheroList />} />
-            <Route path="/superheroes/:id" element={<SuperheroDetail />} />
+            <Route
+              path="/superheroes"
+              element={
+                <ProtectedRoute>
+                  <SuperheroList />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/superheroes/:id"
+              element={
+                <ProtectedRoute>
+                  <SuperheroDetail />
+                </ProtectedRoute>
+              }
+            />
             <Route path="*"></Route>
           </Routes>
         </div>
