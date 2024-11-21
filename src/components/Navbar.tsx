@@ -19,6 +19,9 @@ export default function Navbar() {
   const isAuthenticated = useSelector(
     (state: RootState) => state.auth.isAuthenticated
   );
+  const email = useSelector(
+    (state: RootState) => state.auth.user?.email
+  );
 
   const handleLogout = () => {
     dispatch(logout());
@@ -160,13 +163,18 @@ export default function Navbar() {
         <div className="border-t border-white/20 py-2">
           <div className="flex justify-end space-x-4">
             {isAuthenticated ? (
-              <button
-                onClick={handleLogout}
-                className="text-white hover:text-gray-200 text-sm uppercase tracking-wider px-4 py-1 rounded border border-white/30 hover:bg-white/10 transition-colors flex items-center gap-2"
-              >
-                <FiLogOut className="h-4 w-4" />
-                Log Out
-              </button>
+              <div className="flex items-center gap-4">
+                <div className="text-white text-sm tracking-wider px-4 py-1 rounded border border-white/30 bg-transparent hover:bg-white/10 transition-colors">
+                  {email + ' ' + 'You are logged in'}{" "}
+                </div>
+                <button
+                  onClick={handleLogout}
+                  className="text-white hover:text-gray-200 text-sm uppercase tracking-wider px-4 py-1 rounded border border-white/30 hover:bg-white/10 transition-colors flex items-center gap-2"
+                >
+                  <FiLogOut className="h-4 w-4" />
+                  Log Out
+                </button>
+              </div>
             ) : (
               <>
                 <Link
