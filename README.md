@@ -13,9 +13,10 @@ Get in! Use the searcher and navigate  to explore the superhero universe with ju
 
 **How it works:** ⚙️
 
-- Log in: 
-Customize options: Tailor your project to your specific needs by adjusting various options.
-Get an instant estimate: Receive a detailed breakdown of your estimated costs.
+- Log in with the demo user and password provided.
+- There are 12 superheroes hardcoded, but you can search for more, using the search bar and different filters.
+- There is a page to register but it's only working for testing purposes.
+- Enjoy!
 
 **Getting Started:** 🔧
   
@@ -32,17 +33,18 @@ Get an instant estimate: Receive a detailed breakdown of your estimated costs.
 
  # 3. Run the Development Server:
    ```sh
-npm run dev
+- npm run dev
+- navigate and open the provided ip
 ```
 
 **Technologies Used:** 🛠️
 
-  [ReactJS]: A JavaScript library for building user interfaces.
-  [Vite]: A build tool for frontend development.
-  [TypeScript]: A typed superset of JavaScript.
-  [TailwindCSS]: A utility-first CSS framework.
-  [node.js]: evented I/O for the backend.
-  [Redux]: A predictable state container for JavaScript applications.
+  -[ReactJS]: A JavaScript library for building user interfaces.
+  -[Vite]: A build tool for frontend development.
+  -[TypeScript]: A typed superset of JavaScript.
+  -[TailwindCSS]: A utility-first CSS framework.
+  -[node.js]: evented I/O for the backend.
+  -[Redux]: A predictable state container for JavaScript applications.
 
 
 
@@ -59,7 +61,7 @@ This application is developed as a project to practise React Redux concepts.
 [//]: # 
 
    [node.js]: <http://nodejs.org>
-   [ReactJS]: <https://www.react.org/>
+   [ReactJS]: <https://es.react.dev/>
    [vite]: <https://es.vitejs.dev/>
    [TypeScript]: <https://www.typescriptlang.org/>
    [TailwindCSS]: <https://tailwindcss.com/docs/installation>
