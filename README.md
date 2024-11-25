@@ -11,8 +11,6 @@ Get in! Use the searcher and navigate  to explore the superhero universe with ju
 https://github.com/user-attachments/assets/8b57bd15-72be-4df4-9c99-4b5e49170106
 
 
-
-
 ![Screenshoot-1](/public/assets/Superhero_home.png)
 ![Screenshoot-2](/public/assets/superhero_detail.png)
 
@@ -23,6 +21,7 @@ https://github.com/user-attachments/assets/8b57bd15-72be-4df4-9c99-4b5e49170106
 - There are 12 superheroes hardcoded, but you can search for more, using the search bar and different filters.
 - There is a page to register but it's only working for testing purposes.
 - Enjoy!
+- An API key should be needed to get more hero info request (check 'Getting Started').
 
 **Getting Started:** 🔧
   
@@ -41,6 +40,12 @@ https://github.com/user-attachments/assets/8b57bd15-72be-4df4-9c99-4b5e49170106
    ```sh
 - npm run dev
 - navigate and open the provided ip
+```
+# 3. Get your own API KEY:
+   ```sh
+- Go to the API: https://superheroapi.com/.
+- Click the button 'Log with Github' to get your API key.
+- Create an .env at the root of the project and add: VITE_SUPERHERO_API_KEY=<YOUR API KEY HERE>.
 ```
 
 **Technologies Used:** 🛠️
