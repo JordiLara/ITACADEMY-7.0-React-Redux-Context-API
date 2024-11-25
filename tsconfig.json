@@ -1,4 +1,8 @@
 {
+  "compilerOptions": {
+    "typeRoots": ["node_modules/@types"],
+    "types": ["jest", "@types/redux-mock-store"]
+  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
