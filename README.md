@@ -6,6 +6,9 @@ Enter on a extense superhero wiki finder!
 
 Get in! Use the searcher and navigate  to explore the superhero universe with just one click! This app connects you to a vast database of over 700 superheroes from DC and Marvel. Search for your favorite, discover their strengths and weaknesses, and learn more about them. Almost everything you need to know about your heroes is here!
 
+*********************************************************************************************************************************************************************************************************************
+
+![Demo](/public/assets/Demo.mp4)
 ![Welcome](/public/assets/Superhero_welcome.png)
 ![Screenshoot-1](/public/assets/Superhero_home.png)
 ![Screenshoot-2](/public/assets/superhero_detail.png)
