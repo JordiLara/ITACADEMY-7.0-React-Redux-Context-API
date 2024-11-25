@@ -165,7 +165,7 @@ export default function Navbar() {
             {isAuthenticated ? (
               <div className="flex items-center gap-4">
                 <div className="text-white text-sm tracking-wider px-4 py-1 rounded border border-white/30 bg-transparent hover:bg-white/10 transition-colors">
-                  {email + ' ' + 'You are logged in'}{" "}
+                  { 'Hola,'} { email }{" "}
                 </div>
                 <button
                   onClick={handleLogout}
