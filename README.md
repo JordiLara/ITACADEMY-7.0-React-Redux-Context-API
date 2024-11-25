@@ -2,7 +2,7 @@
 
 **Description:** 🚀
 
-Enter on a extense superhero wiki finder! 
+Enter into an extense superhero wiki finder! 
 
 Get in! Use the searcher and navigate  to explore the superhero universe with just one click! This app connects you to a vast database of over 700 superheroes from DC and Marvel. Search for your favorite, discover their strengths and weaknesses, and learn more about them. Almost everything you need to know about your heroes is here!
 
@@ -21,7 +21,7 @@ https://github.com/user-attachments/assets/8b57bd15-72be-4df4-9c99-4b5e49170106
 - There are 12 superheroes hardcoded, but you can search for more, using the search bar and different filters.
 - There is a page to register but it's only working for testing purposes.
 - Enjoy!
-- An API key should be needed to get more hero info request (check 'Getting Started').
+- An API key must be needed to request more superhero info (check 'Getting Started').
 
 **Getting Started:** 🔧
   
