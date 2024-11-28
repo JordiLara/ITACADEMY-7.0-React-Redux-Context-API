@@ -25,7 +25,7 @@ export default function SuperheroDetail() {
           setHero(data);
         } catch (err) {
           console.error("Error fetching hero:", err);
-          setError("Failed to fetch hero details. Please try again later.");
+          setError("Failed to fetch hero details. Please try again later.\nPlease check README for further details.");
         } finally {
           setLoading(false);
         }
